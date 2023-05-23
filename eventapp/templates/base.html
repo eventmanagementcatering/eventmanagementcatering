@@ -1,0 +1,107 @@
+{% load static %}
+<html>
+
+<head>
+    <title>event catering</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    
+    <link href="{% static 'js/bootstrap.min.js' %}" rel="stylesheet" />
+    <link href="{% static 'css/bootstrap-grid.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'style.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+        
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<link href="{% static 'ihover/src/ihover.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row text-light" id="topheader">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h1>BANQUET</h1>
+                    </div>
+                    <div class="col-md-8">
+                        <nav>
+                            <ul class="nav">
+                                <li><a href="/home/" class="nav-link">HOME</a></li>
+                                <li><a href="/aboutus" class="nav-link">ABOUT</a></li>
+                                <li class="nav-item dropdown">
+                                <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown">  SERVICES  </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/events/"> EVENTS</a></li>
+                                    <li><a class="dropdown-item" href="/menu/"> MENU </a></li>
+                                    <li><a class="dropdown-item" href="/decoration/"> DECORATION </a></li>
+                                    
+                                    <li><a class="dropdown-item" href="/packages/"> PACKAGES </a></li>
+                                </ul>
+                                </li>
+                                <li><a href="/blogs" class="nav-link">BLOG</a></li>
+                                <li><a href="/FAQs" class="nav-link">FAQs</a></li>
+                                <li><a href="/contact" class="nav-link">CONTACT</a></li>
+                                
+                                
+                                
+                                <li><a href="/booking" class="nav-link">BOOKING</a></li>
+                                
+                                <li><a href="/Vendor" class="nav-link">VENDOR</a></li>
+                                {% if user.is_authenticated %}
+                                <li><a href="javascript:void(0)" class="nav-link">hi, {{ user.username }}</a></li>
+                                
+                                <li><a href="/logout/" class="nav-link">Logout</a></li>
+                                {% else %}
+                                <li><a href="/signup/" class="nav-link">Register</a></li>
+                                <li><a href="/login/" class="nav-link">Login</a></li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+
+{% block content%}
+{% endblock %}
+
+                                            <div class="row mt-5" id="footer">
+                                                <div class="col-md-4">
+                                                    <h2 class="display-2 mt-5">BANQUET</h2>
+                                            
+                                                     </div>
+                                                     <div class="col-md-2 mt-5">
+                                                        <p>FACEBOOK</p>
+                                                        <P>TWITTER</P>
+                                                        <P>INSTAGRAM</P>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                    
+                                                        <p class="mt-5">WEDDINGS</p>
+                                                        <P>CORPORATE</P>
+                                                        <P>EVENTS</P>
+                                                        <P>ABOUT US</P>
+                                                        <P>CONTACT</P>
+                                                    </div>
+                                                    
+                                                    <div class="col-md-4 p-5">
+                                                        <h3 class="display-6">Receive Updates
+                                                            & Special
+                                                            Annoucements</h3>
+                                                
+                                                    
+                                                    
+           
+                                                        
+                                                    
+                            
+</div>
+
+    </div>
+    </body>
+    </html>

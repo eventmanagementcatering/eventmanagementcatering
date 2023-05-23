@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block content %} 
+
+<div class="row">
+
+<div class="col-md-12 p-5 banner">
+    <h2 class="display-4">Menu</h2>
+    <p class="display-6">For just the ugly net phasellus</p>
+   </div>
+   <div class="row">
+    <div class="col-md-12 banner p-5 mt-5">
+        <img src="{% static 'xl.jpg' %}" width="100%" height="500"/>
+   </div>
+   </div>
+   <div class="row">
+   <div class="col-md-12 p-5 mt-5 banner">
+     <p class="display-2">Featured Menu</p>
+     <h3 class="display-4">Making your guest more delighted with our food.</h3>
+     <button class="btn btn-warning btn-lg submit bg-transparent">Book Now</button>
+   </div>
+   </div>
+{% for b in M %}
+<div class="row">
+<div class="col-sm-6 banner p-5 mt-5 mb-4">
+
+    <!-- normal -->
+
+    <div class="img"><img src="/media/{{ b.photo }}" alt="img" width="100%"></div>
+    </div>
+    <div class="col-md-6 banner mt-5">
+            <h3 class="display-1">{{ b.heading }}</h3>
+      
+            <p>{{ b.items|safe }}</p>
+            </div>
+            
+             
+
+
+             </div></a></div>
+             <!-- end normal -->
+
+             </div>
+             {% endfor %}
+           
+             </div>
+
+             {% endblock %}

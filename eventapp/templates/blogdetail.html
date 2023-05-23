@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="row banner mt-5">
+    <div class="col-md-12">
+        <h2 class="dprice">BLOGS ABOUT ROYAL EVENT MANAGEMENT & CATERING SYSTEM</h2>
+        </div>
+
+        <div class="col-md-8 mt-5 text-center p-5 blogs">
+            <h2 class="mt-5">{{ blg.title }}</h2>
+            <img src="/media/{{ blg.photo }}" width="100%" height="200" >
+            <h2>{{ blg.description|safe }}...</h2>
+            <h2>{{ blg.post_by }} {{ blg.post_on }}<h2>
+            </div>
+            
+{% endblock %}            

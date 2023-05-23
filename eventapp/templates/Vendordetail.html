@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block content %} 
+
+<div class="row">
+    <div class="col-md-12 p-5 banner">
+    <h2 class="display-4">EVENT VENDOR DETAILS</h2>
+</div>
+{% for b in V %}
+<div class="col-sm-6 mb-5">
+
+    <!-- normal -->
+    <div class="ih-item square effect6 from_top_and_bottom"><a href="#">
+        <div class="img"><img src="/media/{{ b.photo }}" alt="img"></div>
+        
+        <div class="info">
+            <h3>{{ b.name }}</h3>
+            
+             
+            </div></a></div>
+            
+            <div class="dprice mt-5">
+                <p>{{ b.name }}<br/>
+                 {{ b.location }}</p> 
+                <h4>{{ b.price }}</h4>
+                <h5>{{ b.description|safe }}</h5>
+            </div>
+            <!-- end normal -->
+
+            </div>
+            {% endfor %}
+
+            </div>
+
+            {% endblock %}

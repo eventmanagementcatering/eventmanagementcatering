@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block content %} 
+
+<div class="row">
+    <div class="col-md-12 p-5 mt-5 banner">
+    <h2 class="display-4"> EVENT PACKAGES</h2>
+</div>
+</div>
+{% for b in p %}
+<div class="row banner">
+<div class="col-sm-6 mt-5 banner mb-4">
+ 
+    <!-- normal -->
+    
+    
+    
+    
+    
+        <div class="img"><img src="/media/{{ b.photo }}" class="rounded-circle" alt="img" width="100%"></div>
+        </div>
+        <div class="col-md-6 banner mt-5">
+        <h3>{{ b.name }}</br></h3>
+        
+          
+          
+          <p>{{ b.description|safe }}</p>
+          <h4 class="display-8 mt-2">{{ b.startingprice }}</h4>
+          <h4 class="display-8 mt-2">{{ b.Numberofguest }}</h4>
+          <h4 class="display-8 mt-2">{{ b.choices }}</h4>>
+       </div>
+        </div>
+    <!-- end normal -->
+ 
+  </div>
+{% endfor %}
+
+</div>
+
+{% endblock %}

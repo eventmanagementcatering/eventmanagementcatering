@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row mt-5 banner">
+    
+    <div class="col-md-8 offset-2 p-5 banner text-center">
+        <h1 class="display-4">BOOKING US</h1>
+        <img src="{% static 'light.jpg' %}" width="100%">
+</div>
+</div>
+<form action="/insertbooking/" method="post">
+    {% csrf_token %}
+<div class="row banner mt-5">
+    <div class="col-md-8 offset-2 p-5 banner text-center">
+    <h1 class="display-4">Booking Us For Event Management & Catering Services</h1>
+    </div>
+    <div class="col-md-6 mb-3">
+        <input type="text" placeholder="FirstName" class="p-2  form-control" name="FirstName">
+        </div>
+        <div class="col-md-6 mb-3">
+            <input type="text" placeholder="LastName" class="p-2 form-control" name="LastName">
+        </div> 
+        <div class="col-md-6 mb-3">
+            <label>EventDate</label>
+            <input type="date" placeholder="EventDate" class="p-2 form-control" name="EventDate">
+        </div>   
+        <div class="col-md-6 mb-3">
+            <label>ContactNumber</label>
+            <input type="tel" placeholder="Phone" class="p-2 form-control" name="ContactNumber">
+        </div> 
+        <div class="row banner">
+            <div class="col-md-12 mb-3">
+                <label>NoofGuests</label>
+                <input type="number" placeholder="AnticipatedGuestCount" class="p-2 form-control" name="NoofGuests">
+
+        </div>
+        <div class="col-md-6 mb-3">
+            <label>Email</label>
+            <input type="email" placeholder="Email" class="p-2 form-control" name="Email">
+        </div>   
+        <div class="col-md-6 mb-3">
+            <label>EventTime</label>
+            <input type="time" placeholder="StartTime" class="p-2 form-control" name="EventTime">
+        </div>
+          
+        <div class="col-md-6 mb-3">
+            <label>EventVenue</label>
+            <input type="text" placeholder="venueEventAddress" class="p-2 form-control" name="venueEventAddress">
+        </div>  
+    
+            
+       
+        
+        
+        <div class="col-md-6 mb-3">
+            <label>selectevent</label>
+            <select class="form-control" name="selectevent">
+            <option value="">-selectevent-</option>
+            {% for eve in e %}
+            <option>{{ eve.title }}</option>
+            {% endfor %}
+        </select>
+        </div>
+        
+        
+        <div class="col-md-6 mb-3">
+        <label>selectdecoration</label>
+        <select class="form-control" name="selectdecoration">
+        <option value="">-selectdecoration-</option>
+        {% for eve in d %}
+            <option>{{ eve.type }}</option>
+            {% endfor %}
+    </select>
+    </div>
+    
+        <div class="col-md-6 mb-3">
+            <label>selectpackages</label>
+            <select class="form-control" name="selectpackages">
+            <option value="">-selectpackages-</option>
+            {% for eve in p %}
+            <option>{{ eve.name }}</option>
+            {% endfor %}
+        
+        
+        </select>
+        </div>
+        
+        <div class="col-md-12 mb-3">
+            <input type="text" placeholder="TellusYourNeeds" class="p-5 form-control" name="TellusYourNeeds">
+        </div>
+        <div class="col-md-4 text-center mb-3">
+            <button>Submit</button>
+        </div>
+        </div>
+        </div>
+    </form>
+{% endblock %}
